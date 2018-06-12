@@ -20,6 +20,9 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'max-len': 'off',
-    'no-underscore-dangle': 'off'
+    'no-underscore-dangle': 'off',
+    'no-continue': 'off',
+    'no-plusplus': 'off',
+    'prefer-const': 'off'
   }
 }
