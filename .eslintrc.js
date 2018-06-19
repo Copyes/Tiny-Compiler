@@ -23,6 +23,8 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-continue': 'off',
     'no-plusplus': 'off',
+    'no-use-before-define': 'off',
+    'no-param-reassign': 'off',
     'prefer-const': 'off'
   }
 }
