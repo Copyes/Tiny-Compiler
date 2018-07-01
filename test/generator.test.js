@@ -1,35 +1,7 @@
-import transformer from '../src/transformer'
+import { codeGenerator } from '../src/generator'
 
-describe('Test the transformer method', () => {
-  const ast = {
-    type: 'Program',
-    body: [
-      {
-        type: 'CallExpression',
-        name: 'add',
-        params: [
-          {
-            type: 'NumberLiteral',
-            value: '2'
-          },
-          {
-            type: 'CallExpression',
-            name: 'subtract',
-            params: [
-              {
-                type: 'NumberLiteral',
-                value: '4'
-              },
-              {
-                type: 'NumberLiteral',
-                value: '2'
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+describe('Test the codeGenerator method:', () => {
+  const output = 'add(2,subtract(4,2));'
   const newAst = {
     type: 'Program',
     body: [
@@ -68,9 +40,10 @@ describe('Test the transformer method', () => {
       }
     ]
   }
-  describe('Transformer the right new ast', () => {
-    test('Transformer should turn `ast` into a `newAst`', () => {
-      expect(transformer(ast)).toEqual(newAst)
+
+  describe('codeGenerator the right new output', () => {
+    test('codeGenerator should turn `newAst` into a `output`', () => {
+      expect(codeGenerator(newAst)).toEqual(output)
     })
   })
 })
